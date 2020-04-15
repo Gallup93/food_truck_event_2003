@@ -40,4 +40,8 @@ class EventTest < Minitest::Test
   def test_food_trucks_that_sell
     assert_equal [@food_truck1, @food_truck3], @event.food_trucks_that_sell(@item1)
   end
+
+  def test_access_to_trucks_potential
+    assert_equal 345.00, @food_truck2.potential_revenue
+  end
 end

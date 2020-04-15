@@ -6,8 +6,10 @@ class FoodTruck
   end
 
   def check_stock(item)
-    if @inventory.any?{|stocked_item| item.name == stocked_item[:name]}
-      require "pry";binding.pry
+    if @inventory.find do |stocked_item|
+        item == stocked_item[0]
+      end != nil
+      @inventory[item]
     else
       return 0
     end
@@ -20,5 +22,4 @@ class FoodTruck
       @inventory[new_item] += amount
     end
   end
-  require "pry";binding.pry
 end

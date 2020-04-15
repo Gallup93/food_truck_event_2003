@@ -22,4 +22,14 @@ class FoodTruck
       @inventory[new_item] += amount
     end
   end
+
+  def potential_revenue
+    total = 0
+    if inventory != nil
+      @inventory.each do |item|
+        total += (item[0].price * item[1])
+      end
+    end
+    total
+  end
 end

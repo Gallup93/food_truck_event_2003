@@ -19,13 +19,17 @@ class EventTest < Minitest::Test
     @food_truck2.stock(@item3, 25)
     @food_truck3.stock(@item1, 65)
     @event = Event.new("South Pearl Street Farmers Market")
-    # @event.add_food_truck(@food_truck1)
-    # @event.add_food_truck(@food_truck2)
-    # @event.add_food_truck(@food_truck3)
+    @event.add_food_truck(@food_truck1)
+    @event.add_food_truck(@food_truck2)
+    @event.add_food_truck(@food_truck3)
   end
 
   def test_initialization_with_attributes
     assert_instance_of Event, @event
     assert_equal "South Pearl Street Farmers Market", @event.name
+  end
+
+  def test_add_food_truck
+    assert_equal [@food_truck1, @food_truck2, @food_truck3], @event.food_trucks
   end
 end

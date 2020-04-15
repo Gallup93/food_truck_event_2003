@@ -12,4 +12,13 @@ class FoodTruck
       return 0
     end
   end
+
+  def stock(new_item, amount)
+    if @inventory[new_item] == nil
+      @inventory[new_item] = amount
+    else
+      @inventory[new_item] += amount
+    end
+  end
+  require "pry";binding.pry
 end

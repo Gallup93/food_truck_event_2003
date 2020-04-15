@@ -9,8 +9,8 @@ class ItemTest < Minitest::Test
   end
 
   def test_initialization_with_attributes
-    assert_instance_of Item, @otem1
-    asserrt_equal "Apple Pie (Slice)", @item2.name
-    asserrt_equal 2.50, @item2.price
+    assert_instance_of Item, @item1
+    assert_equal "Apple Pie (Slice)", @item2.name
+    assert_equal 2.50, @item2.price
   end
 end

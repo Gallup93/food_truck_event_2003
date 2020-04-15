@@ -27,4 +27,17 @@ class Event
     list.uniq.sort
   end
 
+  def total_inventory
+    totals = {}
+    sorted_item_list.each do |item|
+      totals[item] = 0
+    end
+    @food_trucks.each do |truck|
+      truck.inventory.keys.each do |key|
+        totals[key.name] += truck.inventory[key]
+      end
+    end
+
+  end
+
 end

@@ -48,4 +48,8 @@ class EventTest < Minitest::Test
   def test_sorted_item_list
     assert_equal ["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"], @event.sorted_item_list
   end
+
+  def test_total_inventory
+    assert_equal ({}) ,@event.total_inventory
+  end
 end
